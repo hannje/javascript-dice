@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Roll Dem Bones</h1>
+
+      <div class="button1">
+
+      <button class = "button" onclick="myFunction()">Try it</button>
+
+      </div>
+
+ 
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img  id = "img1" class="img1" src="./images/dice0.png">
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img id="img2" class="img2" src="./images/dice0.png">
+      </div>
+
+    </div>
+   
+
+    <div class="container">
+      
+      <div class="dice">
+        
+        <img id="img3" class="img1" src="./images/dice0.png">
+      </div>
+      
+      <div class="dice">
+        
+        <img id="img4" class="img2" src="./images/dice0.png">
+      </div>
+      
+    </div>
+
+    <div class="container">
+    <h3 id="winner"> WINNER </h3>
+  </div>
+
+
+<script>
+
+  var playa1 =0
+  var playa2=0
+
+  function myFunction() {
+
+    for(let i=0; i <10;i++)
+    {
+      myFunction1()
+
+    }
+  }
+
+  function sleep(miliseconds) {
+      var currentTime = new Date().getTime();
+
+      while (currentTime + miliseconds >= new Date().getTime()) {
+      }
+    }
+
+  function myFunction1() {
+
+
+    var die1 = getRandomInt(6) + 1
+
+    var x = document.getElementById("img1")
+
+    var newsrc1 = returnImgStr(die1)
+
+    x.src = newsrc1
+
+
+    die2 = getRandomInt(6) + 1
+    var x2 = document.getElementById("img2")
+    newsrc1 = returnImgStr(die2)
+    x2.src = newsrc1
+  
+    die3 = getRandomInt(6) + 1
+    var x3 = document.getElementById("img3")
+    newsrc1 = returnImgStr(die3)
+    x3.src = newsrc1
+
+    die4 = getRandomInt(6) + 1
+    var x4 = document.getElementById("img4")
+    newsrc1 = returnImgStr(die4)
+    x4.src = newsrc1
+  
+  
+     var w = document.getElementById("winner")
+    if(die1 + die3 > die2 + die4){
+     playa1 = playa1 + 1
+     w.innerHTML = "Playa 1 WINNER"
+    }
+   if (die1 + die3 < die2 + die4) {
+      playa2 = playa2 + 1
+     w.innerHTML = "Playa 2 WINNER"
+       }
+    if (die1 + die3 == die2 + die4) {
+      playa2 = playa2 + 1
+      w.innerHTML = "KISS YA SISTER"
+    }
+        
+    
+
+  
+  }
+
+  function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+    }
+
+function returnImgStr(index)
+{
+  switch (index) {
+    case 1:
+      return "./images/dice1.png"
+      break;
+    case 2:
+      return "./images/dice2.png"
+      break;
+    case 3:
+     return "./images/dice3.png"
+      break;
+    case 4:
+      return "./images/dice4.png"
+      break;
+    case 5:
+      return "./images/dice5.png"
+      break;
+    case 6:
+      return "./images/dice6.png"
+      break;
+  }
+      return "./images/dice6.png"
+}
+
+</script>
+
+
+  </body>
+
+  <footer>
+    hannje llc
+  </footer>
+</html>
